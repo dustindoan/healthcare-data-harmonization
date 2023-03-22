@@ -549,7 +549,7 @@ func ReformatTime(inFormat, date, outFormat jsonutil.JSONStr) (jsonutil.JSONStr,
 	if isoDate.IsZero() {
 		return jsonutil.JSONStr(""), nil
 	}
-	return jsonutil.JSONStr(isoDate.Format(string(outFormat))), nil
+	return jsonutil.JSONStr(isoDate.UTC().Format(string(outFormat))), nil
 }
 
 // SplitTime splits a time string into components based on the Go
